@@ -10,6 +10,5 @@ Feature: Login faild
 
     Examples:
       | username  | password     | message|
-#      | alinaBlazh| gfhjkmkzn    |Неверный пароль|
       | Blazhko   | gfhjkmkzntcnf|Неверный пароль|
       | 123       | 1263         |Такого аккаунта нет|

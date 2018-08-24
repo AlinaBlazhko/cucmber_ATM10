@@ -1,6 +1,7 @@
 import com.codeborne.selenide.Configuration;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import emailpages.CenterPart;
 
 import static com.codeborne.selenide.WebDriverRunner.CHROME;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -16,6 +17,7 @@ public class MyHoocs {
 
     @After
     public void after(){
+        new CenterPart().deleteAllDraftsFromFolder();
         kill();
     }
 }

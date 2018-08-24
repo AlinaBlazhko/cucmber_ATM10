@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class EmailPage {
+public class EmailPage extends AbstractPage{
 
     private By recipient = By.cssSelector("div.js-compose-field.mail-Bubbles");
     private By subject = By.cssSelector("input.mail-Compose-Field-Input-Controller.js-compose-field.js-editor-tabfocus-prev");
@@ -12,32 +12,23 @@ public class EmailPage {
     private By closeButton = By.xpath("//div[@title='Закрыть']");
     private By sentButton = By.xpath("//span[text() = 'Отправить']");
 
-//    public void writeEmail(AbstractEmail email, Email content) {
-//        email.writeEmail(content);
-//    }
-//
-//    public void writeEmailWithDecorator(){
-//        JsonDataDecorator decorator = new JsonDataDecorator(new JsonDataSource());
-//        decorator.writeEmail();
-//    }
-//    public void closeEmail() {
-//        $(closeButton).click();
-//    }
-//
-//    public void sendEmail() {
-//        $(sentButton).click();
-//    }
-//
-//    public boolean isRecipientRight() {
-//        return $("span.mail-Bubble-Block_text").getText().equals("alinaBlazhko");
-//    }
-//
-//    public boolean isSubjectRight(String sub) {
-//        return $(subject).getValue().equals(sub);
-//    }
-//
-//    public boolean isTextRight(String text) {
-//        System.out.println($(email).getValue());
-//        return $(email).getValue().equals(text);
-//    }
+    public EmailPage writeEmail(String address, String sub, String text){
+//        waitForElementVisible(recipient);
+        driver.findElement(recipient).sendKeys(address);
+        driver.findElement(subject).sendKeys(sub);
+        driver.findElement(email).sendKeys(text);
+        return this;
+    }
+
+    public EmailPopup closeEmail(){
+        waitForElementVisible(closeButton);
+        driver.findElements(closeButton).get(0).click();
+        return new EmailPopup();
+    }
+
+    public void sentEmail(){
+        waitForElementVisible(sentButton);
+        driver.findElements(sentButton).get(0).click();
+    }
+
 }

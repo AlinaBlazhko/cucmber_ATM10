@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         strict = true,
-        features="src/test/resources/feature/failedlogin.feature",
+        features="src/test/resources/feature/sendingemail.feature",
         plugin = {
                 "pretty", "json:target/Cucumber.json",
                 "html:target/cucumber-html-report"

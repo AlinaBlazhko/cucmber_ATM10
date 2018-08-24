@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 /**
  * Created by X240 on 8/21/2018.
  */
-public class MyStepdefs {
+public class CheckLoginSteps {
 
     WebDriver driver;
     private HomePage homePage = new HomePage();
