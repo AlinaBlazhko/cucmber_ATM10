@@ -13,7 +13,6 @@ import org.junit.Assert;
  * Created by X240 on 8/25/2018.
  */
 public class SendingEmailSteps {
-
     @And("^Open sent folder$")
     public void openSentFolder() throws Throwable {
         new LeftSection().openSentFolder();

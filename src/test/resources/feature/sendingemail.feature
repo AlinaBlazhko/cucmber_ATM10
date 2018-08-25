@@ -1,4 +1,4 @@
-Feature: write new email
+Feature: write new email and send
 
   Background: open driver
 
