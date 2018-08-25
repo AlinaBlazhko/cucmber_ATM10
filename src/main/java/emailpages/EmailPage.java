@@ -10,7 +10,7 @@ public class EmailPage extends AbstractPage{
     private By subject = By.cssSelector("input.mail-Compose-Field-Input-Controller.js-compose-field.js-editor-tabfocus-prev");
     private By email = By.cssSelector("textarea.cke_editable_themed.cke_contents_ltr");
     private By closeButton = By.xpath("//div[@title='Закрыть']");
-    private By sentButton = By.xpath("//span[text() = 'Отправить']");
+    private By sentButton = By.xpath("//span[text()='Отправить']");
 
     public EmailPage writeEmail(String address, String sub, String text){
 //        waitForElementVisible(recipient);
